@@ -47,7 +47,7 @@
                 playPromise.then(() => {
                     console.log("Musique jouée automatiquement !");
                     setTimeout(() => {
-                        music.volume = 1.0;
+                        music.volume = 0.5; // Réduction du volume à 50%
                     }, 500);
                 }).catch(error => {
                     console.warn("Autoplay bloqué. Attente d'une interaction...");
@@ -55,7 +55,7 @@
                     const unlockAudio = () => {
                         music.play().then(() => {
                             console.log("Musique forcée après interaction !");
-                            music.volume = 1.0;
+                            music.volume = 0.5; // Réduction du volume à 50%
                             document.removeEventListener("click", unlockAudio);
                             document.removeEventListener("mousemove", unlockAudio);
                             document.removeEventListener("touchstart", unlockAudio);
